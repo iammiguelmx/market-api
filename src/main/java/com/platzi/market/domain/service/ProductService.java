@@ -18,11 +18,11 @@ public class ProductService {
         return productRepository.getAll();
     }
 
-    public Optional<Product> getProduct(Integer productId) {
+    public Optional<Product> getProduct(int productId) {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByCategory(Integer categoryId) {
+    public Optional<List<Product>> getByCategory(int categoryId) {
         return productRepository.getByCategory(categoryId);
     }
 
@@ -30,7 +30,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public boolean delete(Integer productId) {
+    public boolean delete(int productId) {
         return getProduct(productId).map(product -> {
             productRepository.delete(productId);
             return true;

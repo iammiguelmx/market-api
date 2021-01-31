@@ -27,7 +27,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<List<Product>> getByCategory(Integer categoryId) {
+    public Optional<List<Product>> getByCategory(int categoryId) {
         return Optional.empty();
     }
 
@@ -38,7 +38,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<Product> getProduct(Integer productId) {
+    public Optional<Product> getProduct(int productId) {
         return Optional.empty();
     }
 
@@ -49,7 +49,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public void delete(Integer productId) {
+    public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
 

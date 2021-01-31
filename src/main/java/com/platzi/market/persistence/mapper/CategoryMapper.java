@@ -4,7 +4,7 @@ import com.platzi.market.domain.Category;
 import com.platzi.market.persistence.entity.Categoria;
 import org.mapstruct.*;
 
-@Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
+@Mapper(componentModel = "spring")
 public interface CategoryMapper {
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoryId"),

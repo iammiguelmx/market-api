@@ -21,10 +21,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -84,7 +80,7 @@
 						<path>
 							<groupId>org.mapstruct</groupId>
 							<artifactId>mapstruct-processor</artifactId>
-							<org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+							<version>${org.mapstruct.version}</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>

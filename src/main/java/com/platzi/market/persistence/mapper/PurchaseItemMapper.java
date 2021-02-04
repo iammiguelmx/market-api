@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {ProductMapper.class})
 public interface PurchaseItemMapper {
 
     @Mappings({
@@ -24,5 +24,4 @@ public interface PurchaseItemMapper {
             @Mapping(target = "id.idCompra", ignore = true)
     })
     ComprasProducto toComprasProducto(PurchaseItem item);
-
 }

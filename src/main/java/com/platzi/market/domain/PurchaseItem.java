@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PurchaseItem implements Serializable {
 
     private static final long serialVersionUID = -4418633604805927473L;
-    
+
     private int productId;
     private int quantity;
     private double total;

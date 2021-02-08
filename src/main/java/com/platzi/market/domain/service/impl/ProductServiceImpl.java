@@ -1,7 +1,8 @@
-package com.platzi.market.domain.service;
+package com.platzi.market.domain.service.impl;
 
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.repository.IProductRepository;
+import com.platzi.market.domain.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductService {
+public class ProductServiceImpl implements IProductService {
 
     @Autowired
     private IProductRepository IProductRepository;

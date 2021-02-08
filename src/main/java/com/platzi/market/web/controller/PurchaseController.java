@@ -1,9 +1,7 @@
 package com.platzi.market.web.controller;
 
-
-
 import com.platzi.market.domain.Purchase;
-import com.platzi.market.domain.service.PurchaseService;
+import com.platzi.market.domain.service.IPurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +15,7 @@ import java.util.List;
 public class PurchaseController {
 
     @Autowired
-    private PurchaseService purchaseService;
+    private IPurchaseService purchaseService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Purchase>> getAll() {

@@ -2,7 +2,7 @@ package com.platzi.market.web.controller;
 
 import com.platzi.market.domain.dto.AuthenticationRequest;
 import com.platzi.market.domain.dto.AuthenticationResponse;
-import com.platzi.market.domain.service.PlatziUserDetailsService;
+import com.platzi.market.domain.service.impl.PlatziUserDetailsService;
 import com.platzi.market.web.controller.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

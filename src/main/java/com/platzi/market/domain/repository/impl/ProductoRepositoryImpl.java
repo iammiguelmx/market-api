@@ -1,4 +1,4 @@
-package com.platzi.market.persistence;
+package com.platzi.market.domain.repository.impl;
 
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.repository.IProductRepository;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ProductoRepository implements IProductRepository {
+public class ProductoRepositoryImpl implements IProductRepository {
 
     @Autowired
     private ProductoCrudRepository productoCrudRepository;

@@ -1,7 +1,11 @@
 package com.platzi.market.web.controller;
 
 import com.platzi.market.domain.Product;
-import com.platzi.market.domain.service.ProductService;
+import com.platzi.market.domain.service.IProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -18,12 +22,14 @@ import java.util.Map;
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    private IProductService productService;
 
     /**
      *
      *  @return {@link ResponseEntity<List<Product>>}
      */
+    @ApiOperation("Get all supermarket products")
+    @ApiResponse(code = 200, message = "OK")
     @GetMapping("/all")
     public ResponseEntity<List<Product>> getAll() {
         Map<String, Object> params = new HashMap<>();
@@ -38,7 +44,13 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable("id") int productId) {
+    @ApiOperation("Search a product with an ID")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Product not found"),
+    })
+    public ResponseEntity<Product> getProduct(@ApiParam(value = "The id of the product", required = true, example = "7")
+                                              @PathVariable("id") int productId) {
         return productService.getProduct(productId)
                 .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -64,5 +76,4 @@ public class ProductController {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
     }
-
 }

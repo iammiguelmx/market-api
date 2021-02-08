@@ -1,4 +1,4 @@
-package com.platzi.market.persistence;
+package com.platzi.market.domain.repository.impl;
 
 import com.platzi.market.domain.Purchase;
 import com.platzi.market.domain.repository.IPurchaseRepository;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class CompraRepository implements IPurchaseRepository {
+public class CompraRepositoryImpl implements IPurchaseRepository {
 
     @Autowired
     private CompraCrudRepository compraCrudRepository;

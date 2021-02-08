@@ -1,10 +1,14 @@
 package com.platzi.market.persistence.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "compras_productos")
-public class ComprasProducto {
+public class ComprasProducto implements Serializable {
+
+    private static final long serialVersionUID = -7846983979255014238L;
+
     @EmbeddedId
     private ComprasProductoPK id;
 

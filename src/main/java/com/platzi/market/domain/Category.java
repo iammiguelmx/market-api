@@ -1,6 +1,10 @@
 package com.platzi.market.domain;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
+
+    private static final long serialVersionUID = -8092275482883976612L;
 
     private int categoryId;
     private String category;

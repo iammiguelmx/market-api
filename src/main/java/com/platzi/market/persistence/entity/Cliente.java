@@ -4,11 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="clientes")
-public class Cliente {
+public class Cliente implements Serializable {
+
+    private static final long serialVersionUID = 6640084229094387681L;
 
     @Id @Getter @Setter
     private String id;

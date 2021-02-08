@@ -1,12 +1,15 @@
 package com.platzi.market.persistence.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 
 @Entity
 @Table(name = "categorias")
-public class Categoria {
+public class Categoria implements Serializable {
+
+    private static final long serialVersionUID = 5858816075945385536L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

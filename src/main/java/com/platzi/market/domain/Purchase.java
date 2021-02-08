@@ -1,9 +1,12 @@
 package com.platzi.market.domain;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Purchase {
+public class Purchase implements Serializable {
+
+    private static final long serialVersionUID = -8781326272231949385L;
 
     private int purchaseId;
     private String clientId;

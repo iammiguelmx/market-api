@@ -3,12 +3,16 @@ package com.platzi.market.web.controller;
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -16,8 +20,20 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    /**
+     *
+     *  @return {@link ResponseEntity<List<Product>>}
+     */
     @GetMapping("/all")
     public ResponseEntity<List<Product>> getAll() {
+        Map<String, Object> params = new HashMap<>();
+        try  {
+            productService.getAll();
+        } catch (DataAccessException e) {
+            params.put("message", "Se produjo un error al consultar en la base de datos.");
+            params.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<>((List<Product>) params, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 

@@ -1,6 +1,10 @@
 package com.platzi.market.domain;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable  {
+
+    private static final long serialVersionUID = -8791367898036932701L;
 
     private int productId;
     private String name;
